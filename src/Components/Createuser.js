@@ -21,10 +21,10 @@ function Createuser(props) {
       pending
     };
 
-    let userdetails= [...props.data.data];
-    userdetails.push(data);
-    props.data.setUserdetails(userdetails);
-    navigate("/userdashboard");
+    let user= [...props.data.user];
+    user.push(data);
+    props.data.setUser(user);
+    navigate("/user-dashboard");
   };
   return (
     <>

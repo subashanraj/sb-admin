@@ -21,17 +21,17 @@ props.data.setUser(data)
 <div id="content">
 
 {/* <!-- Begin Page Content --> */}
-<div className="container-fluid">
+<div className="container-fluid mb">
 
     {/* <!-- Page Heading --> */}
-    <div className="d-sm-flex align-items-center justify-content-between mb-4">
+    <div className="d-sm-flex align-items-center justify-content-between mb-3 mt-3">
         <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
         <a href="www.google.com" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 className="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
 
     {/* <!-- Content Row --> */}
-    <div className="row">
+    <div className="row mt-3">
 
         {/* <!-- Earnings (Monthly) Card Example --> */}
         <div className="col-xl-3 col-md-6 mb-4">
@@ -122,7 +122,7 @@ props.data.setUser(data)
 </div>
 </div>
 <hr/>
-<div className="container mt-5 mb-3 mx-0">
+<div className="container mt-1 mb-3 mx-0">
 
 <Button className='primary' onClick={()=>navigate(`/create-user`)}><AddIcon/>Create User</Button>
 </div>
