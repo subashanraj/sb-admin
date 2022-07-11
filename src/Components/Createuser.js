@@ -3,25 +3,28 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 
-function CreateStudents(props) {
+function Createuser(props) {
   let [name, setName] = useState("");
-  let [email, setEmail] = useState("");
-  let [mobile, setMobile] = useState("");
-  let [batch, setBatch] = useState("");
+  let [monthly, setMonthly] = useState("");
+  let [annual, setAnnual] = useState("");
+  let [task, setTask] = useState("");
+  let [pending, setPending] = useState("");
 
   let navigate = useNavigate();
 
   let handleSubmit = () => {
     let data = {
       name,
-      email,
-      mobile,
-      batch,
+      monthly,
+      annual,
+      task,
+      pending
     };
-    let studentdetails = [...props.data.studentdetails];
-    studentdetails.push(data);
-    props.data.setStudentdetails(studentdetails);
-    navigate("/dashboard");
+
+    let userdetails= [...props.data.data];
+    userdetails.push(data);
+    props.data.setUserdetails(userdetails);
+    navigate("/userdashboard");
   };
   return (
     <>
@@ -30,7 +33,7 @@ function CreateStudents(props) {
           <div className="card-body">
             <div className="row no-gutters align-items-center">
               <div className="col mr-2">
-                <h1>Enter Student Details</h1>
+                <h1>Enter User Details</h1>
                 <Form>
                   <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
@@ -42,29 +45,37 @@ function CreateStudents(props) {
                   </Form.Group>
 
                   <Form.Group className="mb-3">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Monthly Income</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Enter email"
-                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter Monthly Income"
+                      onChange={(e) => setMonthly(e.target.value)}
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3">
-                    <Form.Label>Mobile</Form.Label>
+                    <Form.Label>Annual Income</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Enter Mobile"
-                      onChange={(e) => setMobile(e.target.value)}
+                      placeholder="Enter Annual Income"
+                      onChange={(e) => setAnnual(e.target.value)}
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3">
-                    <Form.Label>Batch</Form.Label>
+                    <Form.Label>Task</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Enter Batch"
-                      onChange={(e) => setBatch(e.target.value)}
+                      placeholder="Enter Tasks"
+                      onChange={(e) => setTask(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Pending Tasks</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter Pending Tasks"
+                      onChange={(e) => setPending(e.target.value)}
                     />
                   </Form.Group>
                   <div className="row align-items-center">
@@ -82,4 +93,4 @@ function CreateStudents(props) {
   );
 }
 
-export default CreateStudents;
+export default Createuser;
